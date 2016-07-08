@@ -44,6 +44,20 @@ function test(x, y) {
 }
 ```
 
+Subarrays are also supported, if you access only one of the dimensions:
+
+```javascript
+let y[2][3][4] = new Uint8Array(2 * 3 * 4);
+console.log(y[1]);
+```
+
+compiles to:
+
+```javascript
+let y = new Uint8Array(2 * 3 * 4);
+console.log(y.subarray(12, 24));
+```
+
 ## Licence
 
 MIT
